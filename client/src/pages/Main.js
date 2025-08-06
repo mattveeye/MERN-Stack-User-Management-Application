@@ -1,7 +1,7 @@
-import UpdateUser from "./UpdateUser";
-import AddUser from "./AddUser";
-import DeleteUser from "./DeleteUser";
-import AllUsers from "./AllUsers";
+import UpdateUser from "../components/UpdateUser";
+import AddUser from "../components/AddUser";
+import DeleteUser from "../components/DeleteUser";
+import AllUsers from "../components/AllUsers";
 
 import {
   Container,
