@@ -55,7 +55,13 @@ npm install
 # Frontend (React / Material UI)
 cd ../client
 npm install
+
+
+# DB (MongoDB)
+Do not forget to run your local MongoDB.
 ```
+
+
 
 ### 3. Environment Variables
 
