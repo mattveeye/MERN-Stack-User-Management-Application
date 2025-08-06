@@ -57,8 +57,7 @@ cd ../client
 npm install
 
 
-# DB (MongoDB)
-Do not forget to run your local MongoDB.
+
 ```
 
 
@@ -98,6 +97,9 @@ cd client
 npm start
 ```
 
+```bash
+# Terminal 3: Do not forget to run your local MongoDB
+```
 
 ---
 
