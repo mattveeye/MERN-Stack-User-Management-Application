@@ -20,10 +20,11 @@ export default function AddUser() {
   function handleChangingPassword(e) {
     setPassword(e.target.value);
   }
+  const API_URL = process.env.REACT_APP_API_URL || '';
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/adddata", {
+    const response = await fetch(`${API_URL}/adddata`, {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },

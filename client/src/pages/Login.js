@@ -16,7 +16,9 @@ export default function Login() {
   async function submitHandler(e) {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:5000/login", {
+    const API_URL = process.env.REACT_APP_API_URL || '';
+      
+    const response = await fetch(`${API_URL}/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, password }),

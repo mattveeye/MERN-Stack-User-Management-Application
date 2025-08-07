@@ -24,7 +24,9 @@ export default function UpdateUser() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    await fetch("http://localhost:5000/updatedata", {
+    const API_URL = process.env.REACT_APP_API_URL || "";
+
+    await fetch(`${API_URL}/updatedata`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, newPassword: password }),

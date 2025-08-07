@@ -14,8 +14,9 @@ import {
 export default function AllUsers() {
   const [items, setItems] = useState([]);
 
+  const API_URL = process.env.REACT_APP_API_URL || '';
   useEffect(() => {
-    fetch("http://localhost:5000/mydata", {
+    fetch(`${API_URL}/mydata`, {
       credentials: "include",
     })
       .then((res) => {
@@ -36,7 +37,7 @@ export default function AllUsers() {
         console.error("Fetch error:", err);
         setItems([]);
       });
-  }, []);
+  }, [API_URL]);
 
   return (
     <Container maxWidth="sm" sx={{ mt: 4, mb: 6 }}>

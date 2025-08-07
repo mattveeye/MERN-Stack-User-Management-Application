@@ -1,7 +1,7 @@
 
-# 🌐 MERN Stack User Management Application
+# 🌐 MERN Stack User Management Application w/ Docker 🐋
 
-> **A modern, secure, and responsive user management dashboard built with the MERN stack and Material UI.**
+> **A modern, secure, and responsive user management dockerized dashboard built with the MERN stack and Material UI.**
 
 ![MERN Stack](https://img.shields.io/badge/MERN-Stack-blue?logo=mongodb&logoColor=white&color=1e40af)
 ![React](https://img.shields.io/badge/React-v18-green?logo=react&logoColor=white)
@@ -40,6 +40,7 @@ Follow these steps to run the project locally.
 
 ```bash
 git clone https://github.com/mattveeye/MERN-Stack-User-Management-Application
+
 cd MERN-Stack-User-Management-Application
 ```
 
@@ -56,32 +57,58 @@ npm install
 cd ../client
 npm install
 
-
-
 ```
 
 
 
 ### 3. Environment Variables
 
-Create a `.env` file in the `server` directory:
+#### 3.2.1. Create a `.env` file in the `server` directory:
 
 ```env
 # Server Port
 PORT=5000
 
 # MongoDB Connection String
-MONGODB_URI=mongodb+srv://<username>:<password>@<cluster_name>/<database_name>?retryWrites=true&w=majority
+MONGODB_URI=mongodb://localhost:27017/<db_name>
 
 # JWT Secret Key
-ACCESS_TOKEN=your_strong_secret_key_here
+ACCESS_TOKEN=<your_strong_secret_key_here>
 ```
 
-> 🔐 Replace `<username>`, `<password>`, `<cluster_name>`, and `<database_name>` with your actual MongoDB credentials.  
+> 🔐 Replace `<db_name>` with your actual MongoDB credentials.  
 
 > Use a strong secret key for `ACCESS_TOKEN` 
 
-### 4. Run the Application
+
+#### 3.2.2. Create a `.env` file in the `server/docker_env` directory:
+> You must repeat .env from the server folder BUT change MONGO_URI.
+```env
+# .env from the server folder BUT new MONGO_URI. 
+# put ***mongo*** instead of localhost)
+
+# Server Port
+PORT=5000 
+
+# MongoDB Connection String
+MONGO_URI=mongodb://mongo:27017/<db_name>
+
+# JWT Secret Key
+ACCESS_TOKEN=<your_strong_secret_key_here>
+```
+> 🔐 Replace `<db_name>` with your actual MongoDB credentials.  
+
+> Use a strong secret key for `ACCESS_TOKEN` 
+
+
+
+#### 3.2.3. Create a `.env` file in the `client` directory:
+```env
+REACT_APP_API_URL=http://localhost:5000
+```
+<h1> You can choose any way to run the app</h1>
+
+### 4.1. First way to run the app (Default)
 
 Start both the server and client:
 
@@ -103,6 +130,22 @@ npm start
 
 ---
 
+### 4.2. Second way. Run with Docker 🐳
+
+This project can be easily run using Docker and Docker Compose. This method handles all dependencies and sets up the server and client in a single command.
+
+1.  **Ensure Docker is installed:** Make sure you have Docker and Docker Compose installed on your system.
+
+2.  **Build and run the containers:** From the root directory of the project, run the following command. This will build the images and start the containers for both the client and server.
+
+    ```bash
+    docker-compose up --build
+    ```
+
+3.  **Access the application:** The client will be available at `http://localhost:3000` and the server will be running on `http://localhost:5000`.
+
+
+
 ## 🛠️ Built With
 
 ### 🎨 Frontend
@@ -121,3 +164,7 @@ npm start
 ### 🗄️ Database
 - **MongoDB** – Cloud-hosted NoSQL database
 
+### 🐳 Infrastructure & DevOps 
+
+- **Docker & Docker Compose**  – Full containerization for seamless development, dependency management, and consistent deployment across environments.
+     

@@ -22,7 +22,9 @@ export default function DeleteUser() {
 
   
 
-    await fetch("http://localhost:5000/deletedata", {
+    const API_URL = process.env.REACT_APP_API_URL || '';
+
+    await fetch(`${API_URL}/deletedata`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name }),

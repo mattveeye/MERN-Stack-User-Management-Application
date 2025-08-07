@@ -14,9 +14,12 @@ import {
 } from "@mui/material";
 
 export default function Main() {
+
+  const API_URL = process.env.REACT_APP_API_URL || '';
+
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:5000/logout", {
+      const response = await fetch(`${API_URL}/logout`, {
         method: "POST",
         credentials: "include",
       });
