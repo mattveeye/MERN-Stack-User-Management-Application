@@ -80,11 +80,11 @@ ACCESS_TOKEN=<your_strong_secret_key_here>
 
 > Use a strong secret key for `ACCESS_TOKEN` 
 
-
-#### 3.2.2. Create a `.env` file in the `server/docker_env` directory:
-> You must repeat .env from the server folder BUT change MONGO_URI.
+### Create /server/docker_env/ directory.
+#### 3.2.2. Create a `.env` file in the `server/docker_env/` directory:
+> You must repeat .env from the server directory BUT change MONGO_URI.
 ```env
-# .env from the server folder BUT new MONGO_URI. 
+# .env from the server directory BUT new MONGO_URI. 
 # put ***mongo*** instead of localhost)
 
 # Server Port
