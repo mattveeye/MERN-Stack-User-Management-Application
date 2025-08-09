@@ -1,5 +1,5 @@
 
-# 🌐 MERN Stack User Management Application w/ Docker 🐋
+# 🌐 MERN Stack User Management Application w/ Docker (Compose)  🐋
 
 > **A modern, secure, and responsive user management dockerized dashboard built with the MERN stack and Material UI.**
 
